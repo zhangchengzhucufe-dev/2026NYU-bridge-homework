@@ -11,7 +11,7 @@ int main()
     cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
     cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
     cout << num1 << " / " << num2 << " = " << num3 << endl;
-    cout << num1 << " div " << num2 << " = " << num1 / num2 << endl;
+    cout << num1 << " div " << num2 << " = " << static_cast<int>(num1) / num2 << endl;
     cout << num1 << " mod " << num2 << " = " << num1 % num2 << endl;
     return 0;
 }
