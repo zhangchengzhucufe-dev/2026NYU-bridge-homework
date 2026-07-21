@@ -6,12 +6,11 @@ void reverseArray(int arr[], int arrSize)
     for(int i = 0; i < arrSize/2; i++)
     {
         int swap;
-        arr[i] = swap;
+        swap = arr[i];
         arr[i] = arr[arrSize - 1 -i];
         arr[arrSize - 1 -i] = swap;
     }
 }
-
 
 void removeOdd(int arr[], int& arrSize)
 {
@@ -30,7 +29,7 @@ void removeOdd(int arr[], int& arrSize)
 void splitParity(int arr[], int arrSize)
 {
     int left = 0, right = arrSize - 1;
-    if(left < right)
+    while(left < right)
     {
         while(arr[left] % 2 != 0)
         {
@@ -40,9 +39,16 @@ void splitParity(int arr[], int arrSize)
         {
             right++;
         }
-        int swap;
-        swap = arr[left];
-        arr[left] = arr[right];
-        arr[right] = swap;
+        if(left < right)
+        {
+            int swap;
+            swap = arr[left];
+            arr[left] = arr[right];
+            arr[right] = swap;
+        }
+    }    
+    for(int i = 0; i < arrSize; i++)
+    {
+        cout << arr[i];
     }
 }

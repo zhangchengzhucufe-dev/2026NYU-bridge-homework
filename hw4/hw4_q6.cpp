@@ -1,43 +1,28 @@
-#include <cmath>
 #include <iostream>
 using namespace std;
 
-void printMoreEvenDigits(int inputNum)
+void printMoreEvenDigits(int n)
 {
-    int Num;
-    const double eps = 1e-9;
-    for(int Num = 1; Num <= inputNum; Num++)
+    for(int i = 1; i < n; i++)
     {
-        int power = 0;
-        while(pow(10, power) - eps <= inputNum)
+        int num = i;
+        int countOdd = 0, countEven = 0;
+        do
         {
-            power++;
-        }
-        power--;
-        int evenNum = 0, oddNum = 0;
-        int Num1 = Num;
-        for(int i = 0; i <= power ; i++)
-        {   
-            int product = 1;
-            for(int c = 1; c <= power - i; c++)
+            if(num % 10 % 2 == 0 || i % 10 == 0)
             {
-                product = product * 10;
-            }
-            if(Num1 / product % 2 == 0 || Num1 == 0)
-            {
-                
-                evenNum++;
+                ++countEven;
             }
             else
             {
-                oddNum++;
+                ++countOdd;
             }
-            Num1 = Num1 - (Num1 / product) * product;
-        }
+            num /= 10;
+        }while(num != 0);
 
-        if(evenNum > oddNum)
+        if(countEven > countOdd)
         {
-            cout << Num << endl;
+            cout << i << endl;
         }
-    }    
+    }
 }

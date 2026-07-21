@@ -6,12 +6,18 @@ void printDivisors(int num)
 {
     cout << "Please enter a positive integer >= 2: " ;
     cin >> num;
-    for(int i = 1; i <= sqrt(num); i++)
+    for(int i = 1; i < sqrt(num); i++)
     {
         if(num % i == 0)
         {
-            cout << i << " ";
+            cout << i << " " ;
         }
-        
+    }
+    for(int i = sqrt(num); i >= 1; --i)
+    {
+        if(num % i == 0)
+        {
+            cout << num / i << " ";
+        }
     }
 }

@@ -28,9 +28,14 @@ bool checkPIN(int actualPIN, int enteredCode, int mapping[])
 {
     while(enteredCode != 0)
     {
-        if(mapping[actualPIN % 10] != enteredCode % 10)
+        if(mapping[enteredCode % 10] != actualPIN % 10)
         {
             return false;
+        }
+        else
+        {
+            enteredCode /= 10;
+            actualPIN /= 10;
         }
     }
     return true;

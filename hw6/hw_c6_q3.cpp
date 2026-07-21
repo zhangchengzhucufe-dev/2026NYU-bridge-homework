@@ -4,7 +4,7 @@ using namespace std;
 double eApprox(int n)
 {
     double sum = 1, product = 1;
-    for(int i = 0; i < n; i++)
+    for(int i = 1; i < n + 1; i++)
     {
         product *= i;
         sum += 1.0 / product;
