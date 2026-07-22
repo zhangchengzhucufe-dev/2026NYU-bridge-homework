@@ -6,3 +6,5 @@ void formatName(string first, string middle, string last)
 {
     cout << last << ", " << first << " " << middle[0] << ".";
 }
+
+    
