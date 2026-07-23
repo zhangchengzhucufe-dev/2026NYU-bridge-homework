@@ -38,3 +38,6 @@ draft/
 *.sqlite
 /CppProperties.json
 
+# 特定的文件
+practice.cpp
+replicate.cpp
